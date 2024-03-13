@@ -1,12 +1,16 @@
 interface Teacher {
-  firstName: string;
-  lastName: string;
+  readonly firstName: string;
+  readonly lastName: string;
   fullTimeEmployee: boolean;
-  yearOfExperience: number;
+  yearOfExperience?: number;
   location: string;
-  contract?: boolean;
+  [Key: string] : any;
 }
 
 interface Directors extends Teacher {
   numberOfReports: number;
+}
+
+function printTeacher(firstName: string, lastName:string): string {
+  return (`${firstName[0]}. ${lastName}`);
 }
